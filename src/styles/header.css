@@ -1,0 +1,264 @@
+/* ==========================================================================
+   MEENA FOODS — HEADER NAVIGATION STYLES
+   Significantly larger prominent logo, adaptive video-overlay contrast
+   ========================================================================== */
+
+.site-header {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: var(--header-height);
+  z-index: 100;
+  display: flex;
+  align-items: center;
+  transition: background-color var(--transition-medium), border-color var(--transition-medium);
+}
+
+/* Scrolled state over warm cream sections */
+.site-header.scrolled {
+  background-color: var(--bg-translucent);
+  backdrop-filter: blur(14px);
+  -webkit-backdrop-filter: blur(14px);
+  border-bottom: 1px solid var(--border-subtle);
+}
+
+.header-container {
+  width: 100%;
+  max-width: var(--content-max-width);
+  margin: 0 auto;
+  padding: 0 clamp(24px, 4.5vw, 64px);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  box-sizing: border-box;
+}
+
+/* Brand Logo (Left) — Prominently Sized */
+.header-brand {
+  display: flex;
+  align-items: center;
+  text-decoration: none;
+  opacity: 0;
+  transform: translateY(-6px);
+  animation: headerFadeIn 0.8s var(--ease-editorial) 0.15s forwards;
+}
+
+.header-logo-img {
+  width: clamp(110px, 11vw, 154px);
+  height: auto;
+  aspect-ratio: 347 / 106;
+  object-fit: contain;
+  display: block;
+  transition: transform var(--transition-fast);
+}
+
+.header-brand:hover .header-logo-img {
+  transform: scale(1.02);
+}
+
+/* Desktop Navigation (Right) */
+.header-nav {
+  display: flex;
+  align-items: center;
+  gap: clamp(24px, 3.2vw, 48px);
+  opacity: 0;
+  transform: translateY(-6px);
+  animation: headerFadeIn 0.8s var(--ease-editorial) 0.25s forwards;
+}
+
+.nav-links {
+  display: flex;
+  align-items: center;
+  list-style: none;
+  gap: clamp(18px, 2.4vw, 36px);
+}
+
+/* Nav Link Contrast: White/Cream over top video, Espresso when scrolled */
+.nav-link {
+  font-family: var(--font-sans);
+  font-size: 0.8125rem;
+  font-weight: 600;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+  color: #F8F4ED;
+  text-shadow: 0 1px 6px rgba(0, 0, 0, 0.45);
+  position: relative;
+  padding: 6px 0;
+  transition: color var(--transition-fast), text-shadow var(--transition-fast);
+}
+
+.site-header.scrolled .nav-link {
+  color: var(--text-main);
+  text-shadow: none;
+}
+
+.nav-link::after {
+  content: "";
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 0%;
+  height: 1px;
+  background-color: var(--brand-accent);
+  transition: width var(--transition-fast);
+}
+
+.nav-link:hover {
+  color: var(--brand-accent);
+}
+
+.nav-link:hover::after {
+  width: 100%;
+}
+
+/* 1942 Heritage Badge */
+.header-heritage {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  padding-left: clamp(16px, 2vw, 28px);
+  border-left: 1px solid rgba(255, 255, 255, 0.28);
+  font-family: var(--font-editorial);
+  font-size: 1.125rem;
+  font-weight: 600;
+  letter-spacing: 0.08em;
+  color: #EFE6DA;
+  text-shadow: 0 1px 6px rgba(0, 0, 0, 0.45);
+  transition: border-color var(--transition-fast), color var(--transition-fast), text-shadow var(--transition-fast);
+}
+
+.site-header.scrolled .header-heritage {
+  border-left-color: var(--border-medium);
+  color: var(--text-muted);
+  text-shadow: none;
+}
+
+.heritage-year {
+  color: #FFFFFF;
+  font-feature-settings: "lnum" 1;
+}
+
+.site-header.scrolled .heritage-year {
+  color: var(--text-main);
+}
+
+.heritage-dot {
+  width: 4px;
+  height: 4px;
+  border-radius: 50%;
+  background-color: var(--brand-accent);
+  display: inline-block;
+}
+
+/* Mobile Toggle */
+.mobile-nav-toggle {
+  display: none;
+  width: 44px;
+  height: 44px;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  gap: 6px;
+  z-index: 110;
+}
+
+.toggle-line {
+  display: block;
+  width: 24px;
+  height: 1.5px;
+  background-color: #FAF7F0;
+  box-shadow: 0 1px 4px rgba(0, 0, 0, 0.4);
+  transition: transform var(--transition-medium), opacity var(--transition-medium), background-color var(--transition-fast);
+}
+
+.site-header.scrolled .toggle-line {
+  background-color: var(--text-main);
+  box-shadow: none;
+}
+
+/* Mobile Menu Overlay */
+.mobile-nav-overlay {
+  display: none;
+  position: fixed;
+  inset: 0;
+  background-color: var(--bg-primary);
+  z-index: 105;
+  padding: calc(var(--header-height) + 16px) 32px 40px;
+  flex-direction: column;
+  justify-content: space-between;
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity var(--transition-medium);
+}
+
+.mobile-nav-overlay.open {
+  opacity: 1;
+  pointer-events: auto;
+}
+
+.mobile-nav-links {
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  gap: 22px;
+}
+
+.mobile-nav-link {
+  font-family: var(--font-editorial);
+  font-size: 2rem;
+  color: var(--text-main);
+  text-decoration: none;
+  letter-spacing: 0.04em;
+  transition: color var(--transition-fast);
+}
+
+.mobile-nav-link:hover {
+  color: var(--brand-accent);
+}
+
+.mobile-heritage-footer {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding-top: 24px;
+  border-top: 1px solid var(--border-subtle);
+  font-size: 0.75rem;
+  letter-spacing: 0.12em;
+  color: var(--text-muted);
+}
+
+@keyframes headerFadeIn {
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Tablet & Mobile Breakpoints */
+@media (max-width: 960px) {
+  .header-nav {
+    display: none;
+  }
+
+  .mobile-nav-toggle {
+    display: flex;
+  }
+
+  .mobile-nav-overlay {
+    display: flex;
+  }
+
+  .site-header {
+    height: 78px;
+  }
+
+  .mobile-nav-toggle.open .toggle-line:nth-child(1) {
+    transform: translateY(7.5px) rotate(45deg);
+    background-color: var(--text-main);
+  }
+  .mobile-nav-toggle.open .toggle-line:nth-child(2) {
+    transform: translateY(-7.5px) rotate(-45deg);
+    background-color: var(--text-main);
+  }
+}

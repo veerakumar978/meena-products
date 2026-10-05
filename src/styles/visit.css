@@ -1,0 +1,376 @@
+/* ==========================================================================
+   MEENA FOODS — SECTION 06: VISIT MEENA STYLES
+   Physical Destination Layout with 55/45 Split and Verified Actions
+   ========================================================================== */
+
+.section-visit-destination {
+  position: relative;
+  width: 100%;
+  background-color: #FAF5ED;
+  background: radial-gradient(
+    ellipse 85% 65% at 50% 20%,
+    #FCF9F3 0%,
+    #FAF5ED 55%,
+    #F2EAE0 100%
+  );
+  padding: clamp(72px, 10vh, 120px) 0 clamp(56px, 8vh, 90px);
+  border-top: 1px solid rgba(43, 33, 27, 0.08);
+  box-sizing: border-box;
+  overflow-x: hidden;
+}
+
+.visit-inner-container {
+  width: 100%;
+  max-width: var(--content-max-width);
+  margin: 0 auto;
+  padding: 0 clamp(24px, 4.5vw, 64px);
+  box-sizing: border-box;
+}
+
+/* ==========================================================================
+   SECTION HEADER
+   ========================================================================== */
+
+.visit-intro-header {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  margin-bottom: clamp(40px, 6vh, 60px);
+}
+
+.visit-eyebrow-row {
+  display: inline-flex;
+  align-items: center;
+  gap: 12px;
+  margin-bottom: 12px;
+}
+
+.visit-accent-dash {
+  display: inline-block;
+  width: 28px;
+  height: 1px;
+  background-color: var(--brand-accent);
+}
+
+.visit-eyebrow-tag {
+  font-family: var(--font-sans);
+  font-size: 0.75rem;
+  font-weight: 700;
+  letter-spacing: 0.22em;
+  text-transform: uppercase;
+  color: var(--brand-accent);
+}
+
+.visit-headline-main {
+  font-family: var(--font-editorial);
+  font-size: clamp(2.6rem, 4.5vw, 4.4rem);
+  font-weight: 500;
+  line-height: 1.05;
+  letter-spacing: -0.015em;
+  color: var(--text-main);
+  margin-bottom: 10px;
+}
+
+.visit-supporting-copy {
+  font-family: var(--font-editorial);
+  font-size: clamp(1.15rem, 1.4vw, 1.35rem);
+  font-weight: 400;
+  font-style: italic;
+  color: var(--text-body);
+  max-width: 520px;
+}
+
+/* ==========================================================================
+   MASTER 55% / 45% COMPOSITION STAGE
+   ========================================================================== */
+
+.visit-composition-stage {
+  display: grid;
+  grid-template-columns: minmax(0, 54%) minmax(0, 42%);
+  justify-content: space-between;
+  align-items: center;
+  gap: clamp(32px, 5vw, 72px);
+  background: #FCFAF6;
+  border: 1px solid rgba(43, 33, 27, 0.08);
+  border-radius: var(--image-radius);
+  padding: clamp(32px, 4.5vw, 56px);
+  box-shadow: 0 20px 56px -16px rgba(43, 33, 27, 0.08);
+}
+
+/* LEFT: Real Meena Packaging Image Frame */
+.visit-visual-pane {
+  position: relative;
+  width: 100%;
+}
+
+.visit-image-frame {
+  position: relative;
+  width: 100%;
+  height: clamp(380px, 48vh, 520px);
+  background-color: #FAF5EE;
+  border-radius: var(--image-radius);
+  border: 1px solid rgba(43, 33, 27, 0.07);
+  overflow: hidden;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: clamp(20px, 3vw, 40px);
+  box-sizing: border-box;
+}
+
+.visit-hero-img {
+  max-width: 100%;
+  max-height: 100%;
+  object-fit: contain;
+  filter: drop-shadow(0 16px 36px rgba(43, 33, 27, 0.12));
+  transition: transform var(--transition-medium);
+}
+
+.visit-image-frame:hover .visit-hero-img {
+  transform: scale(1.02);
+}
+
+.visit-badge-overlay {
+  position: absolute;
+  bottom: 18px;
+  left: 20px;
+  background: rgba(22, 16, 12, 0.78);
+  backdrop-filter: blur(8px);
+  padding: 6px 14px;
+  border-radius: 2px;
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.badge-dot {
+  color: var(--brand-accent);
+  font-size: 0.5rem;
+}
+
+.badge-text {
+  font-family: var(--font-sans);
+  font-size: 0.625rem;
+  font-weight: 700;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  color: #FAF6EE;
+}
+
+/* RIGHT: Editorial Info Panel */
+.visit-info-pane {
+  display: flex;
+  flex-direction: column;
+}
+
+.visit-location-block {
+  margin-bottom: 24px;
+}
+
+.location-pre-tag {
+  font-family: var(--font-sans);
+  font-size: 0.625rem;
+  font-weight: 700;
+  letter-spacing: 0.22em;
+  text-transform: uppercase;
+  color: var(--brand-accent);
+  display: block;
+  margin-bottom: 4px;
+}
+
+.location-title-city {
+  font-family: var(--font-editorial);
+  font-size: clamp(2.4rem, 3.8vw, 3.6rem);
+  font-weight: 500;
+  line-height: 1.05;
+  color: var(--text-main);
+  margin-bottom: 12px;
+}
+
+.location-full-address {
+  font-family: var(--font-sans);
+  font-size: 0.9375rem;
+  line-height: 1.6;
+  font-style: normal;
+  color: var(--text-body);
+}
+
+/* Contact Meta */
+.visit-contact-meta {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  padding: 16px 0;
+  border-top: 1px solid rgba(43, 33, 27, 0.08);
+  border-bottom: 1px solid rgba(43, 33, 27, 0.08);
+  margin-bottom: 24px;
+}
+
+.meta-entry {
+  display: flex;
+  align-items: baseline;
+  gap: 12px;
+}
+
+.meta-label {
+  font-family: var(--font-sans);
+  font-size: 0.625rem;
+  font-weight: 700;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  color: var(--text-subtle);
+  min-width: 60px;
+}
+
+.meta-value-link {
+  font-family: var(--font-sans);
+  font-size: 0.875rem;
+  font-weight: 600;
+  color: var(--text-main);
+  text-decoration: none;
+  transition: color var(--transition-fast);
+}
+
+.meta-value-link:hover {
+  color: var(--brand-accent);
+}
+
+/* Actions List: 4 Verified Real Links */
+.visit-actions-list {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.visit-action-link {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 12px 16px;
+  background: #FAF6EE;
+  border: 1px solid rgba(43, 33, 27, 0.08);
+  border-radius: var(--image-radius);
+  text-decoration: none;
+  transition: background-color var(--transition-fast), border-color var(--transition-fast), transform var(--transition-fast);
+}
+
+.action-left-group {
+  display: inline-flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.action-icon-svg {
+  width: 18px;
+  height: 18px;
+  opacity: 0.75;
+  transition: opacity var(--transition-fast);
+}
+
+.action-title {
+  font-family: var(--font-sans);
+  font-size: 0.75rem;
+  font-weight: 700;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  color: var(--text-main);
+  transition: color var(--transition-fast);
+}
+
+.action-arrow-svg {
+  width: 14px;
+  height: 14px;
+  transition: transform var(--transition-fast);
+}
+
+/* Action Hover */
+.visit-action-link:hover {
+  background-color: #FFFFFF;
+  border-color: rgba(235, 24, 34, 0.3);
+  transform: translateX(4px);
+}
+
+.visit-action-link:hover .action-icon-svg {
+  opacity: 1;
+}
+
+.visit-action-link:hover .action-title {
+  color: var(--brand-accent);
+}
+
+.visit-action-link:hover .action-arrow-svg {
+  transform: translateX(4px);
+}
+
+/* Highlighted Action (Directions) */
+.visit-action-link.highlight-action {
+  background: #FAF3EA;
+  border-color: rgba(235, 24, 34, 0.22);
+}
+
+/* ==========================================================================
+   SECTION 06 CLOSING SIGNOFF
+   ========================================================================== */
+
+.visit-closing-signoff {
+  margin-top: clamp(60px, 9vh, 96px);
+  padding-top: clamp(32px, 5vh, 48px);
+  border-top: 1px solid rgba(43, 33, 27, 0.08);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  gap: 8px;
+}
+
+.closing-signoff-motto {
+  font-family: var(--font-editorial);
+  font-size: clamp(1.4rem, 2.2vw, 2rem);
+  font-weight: 500;
+  line-height: 1.2;
+  letter-spacing: -0.01em;
+  color: var(--text-main);
+}
+
+.closing-signoff-place {
+  font-family: var(--font-sans);
+  font-size: 0.6875rem;
+  font-weight: 700;
+  letter-spacing: 0.24em;
+  text-transform: uppercase;
+  color: var(--text-subtle);
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.signoff-sep {
+  color: var(--brand-accent);
+}
+
+/* ==========================================================================
+   RESPONSIVE BREAKPOINTS (TABLET & MOBILE)
+   ========================================================================== */
+
+@media (max-width: 960px) {
+  .visit-composition-stage {
+    grid-template-columns: 1fr;
+    gap: 36px;
+    padding: 28px 20px;
+  }
+
+  .visit-image-frame {
+    height: 320px;
+  }
+}
+
+@media (max-width: 600px) {
+  .visit-headline-main {
+    font-size: clamp(2.2rem, 10vw, 3rem);
+  }
+
+  .visit-image-frame {
+    height: 260px;
+  }
+}

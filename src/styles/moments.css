@@ -1,0 +1,454 @@
+/* ==========================================================================
+   MEENA FOODS — SECTION 05: THE MOMENTS STYLES
+   Cinematic Video Gallery (2 Initial Large Videos + Expandable Second Row)
+   ========================================================================== */
+
+.section-moments-gallery {
+  position: relative;
+  width: 100%;
+  background-color: #FAF5ED;
+  background: radial-gradient(
+    ellipse 85% 65% at 50% 25%,
+    #FCF9F3 0%,
+    #FAF5ED 55%,
+    #F3EBE0 100%
+  );
+  padding: clamp(72px, 10vh, 120px) 0 clamp(56px, 8vh, 90px);
+  border-top: 1px solid rgba(43, 33, 27, 0.08);
+  box-sizing: border-box;
+  overflow-x: hidden;
+}
+
+/* Controlled Wide Container (88–92vw, max-width: 1450px) */
+.moments-inner-container {
+  width: 90vw;
+  max-width: 1450px;
+  margin: 0 auto;
+  box-sizing: border-box;
+}
+
+/* ==========================================================================
+   SECTION HEADER: COMPACT & RESTRAINED
+   ========================================================================== */
+
+.moments-intro-header {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  margin-bottom: clamp(36px, 5vh, 52px);
+}
+
+.moments-eyebrow-row {
+  display: inline-flex;
+  align-items: center;
+  gap: 12px;
+  margin-bottom: 12px;
+}
+
+.moments-accent-line {
+  display: inline-block;
+  width: 28px;
+  height: 1px;
+  background-color: var(--brand-accent);
+}
+
+.moments-eyebrow-tag {
+  font-family: var(--font-sans);
+  font-size: 0.75rem;
+  font-weight: 700;
+  letter-spacing: 0.22em;
+  text-transform: uppercase;
+  color: var(--brand-accent);
+}
+
+.moments-headline-main {
+  font-family: var(--font-editorial);
+  font-size: clamp(2.6rem, 4.5vw, 4.4rem);
+  font-weight: 500;
+  line-height: 1.05;
+  letter-spacing: -0.015em;
+  color: var(--text-main);
+  margin-bottom: 10px;
+}
+
+.moments-supporting-copy {
+  font-family: var(--font-editorial);
+  font-size: clamp(1.15rem, 1.4vw, 1.35rem);
+  font-weight: 400;
+  font-style: italic;
+  color: var(--text-body);
+  max-width: 520px;
+}
+
+/* ==========================================================================
+   GALLERY ROWS (SIDE-BY-SIDE 16:9 CINEMATIC VIDEOS)
+   ========================================================================== */
+
+.moments-gallery-wrapper {
+  display: flex;
+  flex-direction: column;
+  gap: clamp(24px, 3.5vh, 36px);
+  width: 100%;
+}
+
+.moments-video-row {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: clamp(20px, 2.5vw, 28px);
+  width: 100%;
+}
+
+/* Individual Video Card: Clean, Unencumbered by heavy borders */
+.moment-video-card {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  cursor: pointer;
+  outline: none;
+  background: #FCFAF6;
+  border-radius: var(--image-radius);
+  overflow: hidden;
+  border: 1px solid rgba(43, 33, 27, 0.08);
+  box-shadow: 0 16px 40px -12px rgba(43, 33, 27, 0.08);
+  transition: transform var(--transition-medium), box-shadow var(--transition-medium);
+}
+
+.video-media-stage {
+  position: relative;
+  width: 100%;
+  aspect-ratio: 16 / 9;
+  background-color: #1A1410;
+  overflow: hidden;
+}
+
+.moment-video-element {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center center;
+  display: block;
+  transition: transform var(--transition-medium), filter var(--transition-fast);
+}
+
+/* Subtle Hover Veil */
+.video-hover-veil {
+  position: absolute;
+  inset: 0;
+  background: rgba(22, 16, 12, 0.28);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  opacity: 0;
+  transition: opacity var(--transition-fast);
+}
+
+.lightbox-cue {
+  font-family: var(--font-sans);
+  font-size: 0.75rem;
+  font-weight: 700;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  color: #FFFFFF;
+}
+
+.lightbox-cue-arrow {
+  color: var(--brand-accent);
+  font-size: 1rem;
+}
+
+/* Hover Behavior: Very subtle scale 1.015-1.02, slight brightness boost */
+.moment-video-card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 24px 56px -14px rgba(43, 33, 27, 0.14);
+}
+
+.moment-video-card:hover .moment-video-element {
+  transform: scale(1.02);
+  filter: brightness(1.04);
+}
+
+.moment-video-card:hover .video-hover-veil {
+  opacity: 1;
+}
+
+/* Card Caption (Neutral Moment Label) */
+.moment-card-caption {
+  padding: 12px 18px;
+  background: #FCFAF6;
+  border-top: 1px solid rgba(43, 33, 27, 0.06);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.moment-label-text {
+  font-family: var(--font-sans);
+  font-size: 0.6875rem;
+  font-weight: 700;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  color: var(--text-muted);
+}
+
+/* ==========================================================================
+   EXPLORE MORE GALLERY TOGGLE BUTTON (CENTERED EDITORIAL LINK)
+   ========================================================================== */
+
+.moments-toggle-action {
+  display: flex;
+  justify-content: center;
+  margin: 12px 0;
+}
+
+.moments-expand-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 12px;
+  background: none;
+  border: none;
+  font-family: var(--font-sans);
+  font-size: 0.8125rem;
+  font-weight: 700;
+  letter-spacing: 0.22em;
+  text-transform: uppercase;
+  color: #261B14; /* Deep espresso */
+  position: relative;
+  padding: 8px 4px 6px;
+  cursor: pointer;
+  transition: color var(--transition-fast);
+}
+
+.moments-expand-btn::after {
+  content: "";
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 1.5px;
+  background-color: var(--brand-accent);
+  transition: transform var(--transition-medium);
+  transform-origin: left;
+}
+
+.btn-arrow-symbol {
+  color: var(--brand-accent);
+  font-size: 1.05rem;
+  transition: transform var(--transition-fast);
+}
+
+.moments-expand-btn:hover {
+  color: var(--brand-accent);
+}
+
+.moments-expand-btn:hover .btn-arrow-symbol {
+  transform: translateX(5px);
+}
+
+/* ==========================================================================
+   EXPANDABLE SECOND ROW (GALLERY 3 & 4)
+   Smooth 500-700ms reveal with subtle stagger
+   ========================================================================== */
+
+.moments-video-row.expandable-row {
+  max-height: 0;
+  opacity: 0;
+  overflow: hidden;
+  pointer-events: none;
+  transition: max-height 650ms cubic-bezier(0.16, 1, 0.3, 1), opacity 500ms ease;
+}
+
+.moments-video-row.expandable-row.visible {
+  max-height: 800px;
+  opacity: 1;
+  pointer-events: auto;
+}
+
+.moments-video-row.expandable-row .secondary-card {
+  transform: translateY(24px);
+  opacity: 0;
+  transition: transform 600ms cubic-bezier(0.16, 1, 0.3, 1), opacity 550ms ease;
+}
+
+.moments-video-row.expandable-row.visible .secondary-card:nth-child(1) {
+  transform: translateY(0);
+  opacity: 1;
+  transition-delay: 0ms;
+}
+
+.moments-video-row.expandable-row.visible .secondary-card:nth-child(2) {
+  transform: translateY(0);
+  opacity: 1;
+  transition-delay: 100ms;
+}
+
+/* ==========================================================================
+   CLOSING STATEMENT
+   ========================================================================== */
+
+.moments-closing-banner {
+  margin-top: clamp(60px, 9vh, 96px);
+  padding-top: clamp(32px, 5vh, 48px);
+  border-top: 1px solid rgba(43, 33, 27, 0.08);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  gap: 12px;
+}
+
+.moments-closing-quote {
+  font-family: var(--font-editorial);
+  font-size: clamp(1.6rem, 2.8vw, 2.5rem);
+  font-weight: 500;
+  line-height: 1.25;
+  letter-spacing: -0.01em;
+  color: var(--text-main);
+}
+
+.moments-closing-brand {
+  font-family: var(--font-sans);
+  font-size: 0.75rem;
+  font-weight: 700;
+  letter-spacing: 0.24em;
+  text-transform: uppercase;
+  color: var(--text-subtle);
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.closing-dot {
+  color: var(--brand-accent);
+}
+
+/* ==========================================================================
+   CINEMATIC VIDEO LIGHTBOX OVERLAY
+   ========================================================================== */
+
+.moment-lightbox-modal {
+  position: fixed;
+  inset: 0;
+  z-index: 1000;
+  background-color: rgba(22, 16, 12, 0.88);
+  backdrop-filter: blur(14px);
+  -webkit-backdrop-filter: blur(14px);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: clamp(20px, 4vw, 48px);
+  box-sizing: border-box;
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity var(--transition-medium);
+}
+
+.moment-lightbox-modal.open {
+  opacity: 1;
+  pointer-events: auto;
+}
+
+.lightbox-dialog-card {
+  position: relative;
+  width: 100%;
+  max-width: 1100px;
+  background-color: #1F1713;
+  border-radius: var(--image-radius);
+  border: 1px solid rgba(255, 255, 255, 0.12);
+  box-shadow: 0 32px 80px -16px rgba(0, 0, 0, 0.65);
+  padding: clamp(20px, 3.5vw, 36px);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  transform: translateY(16px) scale(0.98);
+  transition: transform var(--transition-medium);
+}
+
+.moment-lightbox-modal.open .lightbox-dialog-card {
+  transform: translateY(0) scale(1);
+}
+
+.lightbox-exit-btn {
+  align-self: flex-end;
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  font-family: var(--font-sans);
+  font-size: 0.75rem;
+  font-weight: 700;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  color: #EDE4D6;
+  cursor: pointer;
+  margin-bottom: 14px;
+  transition: color var(--transition-fast);
+}
+
+.lightbox-exit-btn:hover {
+  color: var(--brand-accent);
+}
+
+.exit-symbol {
+  font-size: 1.3rem;
+  color: var(--brand-accent);
+}
+
+.lightbox-video-container {
+  width: 100%;
+  aspect-ratio: 16 / 9;
+  background-color: #000000;
+  overflow: hidden;
+  border-radius: 2px;
+}
+
+.lightbox-video-element {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+  display: block;
+}
+
+.lightbox-caption {
+  font-family: var(--font-sans);
+  font-size: 0.6875rem;
+  font-weight: 700;
+  letter-spacing: 0.22em;
+  text-transform: uppercase;
+  color: #A3968E;
+  margin-top: 14px;
+}
+
+/* ==========================================================================
+   RESPONSIVE BREAKPOINTS (TABLET & MOBILE)
+   ========================================================================== */
+
+@media (max-width: 900px) {
+  .moments-video-row {
+    grid-template-columns: 1fr;
+    gap: 20px;
+  }
+
+  .moments-inner-container {
+    width: 92vw;
+  }
+}
+
+@media (max-width: 600px) {
+  .moments-headline-main {
+    font-size: clamp(2.2rem, 10vw, 3rem);
+  }
+
+  .lightbox-dialog-card {
+    padding: 16px 12px;
+  }
+}
+
+/* Reduced Motion Support */
+@media (prefers-reduced-motion: reduce) {
+  .moments-video-row.expandable-row,
+  .moments-video-row.expandable-row .secondary-card {
+    transition: opacity 200ms ease !important;
+    transform: none !important;
+  }
+}

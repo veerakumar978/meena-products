@@ -1,0 +1,510 @@
+/* ==========================================================================
+   MEENA FOODS — SECTION 00: OPENING HERO STYLES (EXPANSIVE FRAME)
+   "The First Impression of 1942"
+   Substantially Increased Frame Height & Fast 2-Second Transitions
+   ========================================================================== */
+
+.opening-hero {
+  position: relative;
+  width: 100%;
+  min-height: 100vh;
+  min-height: 100dvh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  background: var(--bg-atmosphere);
+  background-color: var(--bg-primary);
+  overflow-x: hidden;
+  box-sizing: border-box;
+  padding-top: var(--header-height);
+  padding-bottom: 24px;
+}
+
+/* Subtle 1942 Watermark in Background */
+.hero-watermark {
+  position: absolute;
+  left: clamp(24px, 4.5vw, 64px);
+  top: 50%;
+  transform: translateY(-52%);
+  font-family: var(--font-editorial);
+  font-size: clamp(7.5rem, 15vw, 15rem);
+  font-weight: 400;
+  font-style: italic;
+  line-height: 1;
+  color: var(--text-main);
+  opacity: 0.038;
+  pointer-events: none;
+  user-select: none;
+  z-index: 1;
+  white-space: nowrap;
+}
+
+/* Master Asymmetric Container: Left (~44%) & Right Expansive Frame (~52%) */
+.hero-wrapper {
+  width: 100%;
+  max-width: var(--content-max-width);
+  margin: 0 auto;
+  padding: 0 clamp(24px, 4.5vw, 64px);
+  display: grid;
+  grid-template-columns: minmax(0, 44%) minmax(0, 52%);
+  justify-content: space-between;
+  align-items: center;
+  gap: clamp(24px, 3.5vw, 56px);
+  box-sizing: border-box;
+  position: relative;
+  z-index: 10;
+  flex: 1;
+}
+
+/* ==========================================================================
+   LEFT SIDE — STORY & EDITORIAL HERITAGE TYPOGRAPHY
+   ========================================================================== */
+
+.hero-story {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  position: relative;
+  z-index: 5;
+  max-width: 580px;
+}
+
+/* Refined "──── SINCE 1942" Eyebrow Mark */
+.hero-eyebrow {
+  display: inline-flex;
+  align-items: center;
+  gap: 12px;
+  font-family: var(--font-sans);
+  font-size: 0.75rem;
+  font-weight: 600;
+  letter-spacing: 0.22em;
+  text-transform: uppercase;
+  color: var(--text-muted);
+  margin-bottom: clamp(14px, 2.2vh, 22px);
+  opacity: 0;
+  transform: translateY(12px);
+  animation: heroFadeSlide 0.75s var(--ease-editorial) 0.3s forwards;
+}
+
+.eyebrow-rule {
+  display: inline-block;
+  width: 32px;
+  height: 1px;
+  background-color: var(--brand-accent-line);
+}
+
+.eyebrow-text {
+  color: var(--brand-accent);
+}
+
+/* 3-Line Large Editorial Headline */
+.hero-headline {
+  font-family: var(--font-editorial);
+  font-size: clamp(2.8rem, 4.8vw, 5rem);
+  font-weight: 500;
+  line-height: 1.02;
+  letter-spacing: -0.015em;
+  color: var(--text-main);
+  margin-bottom: clamp(18px, 2.6vh, 28px);
+}
+
+.headline-line {
+  display: block;
+  overflow: hidden;
+}
+
+.line-inner {
+  display: block;
+  opacity: 0;
+  transform: translateY(100%);
+  animation: heroLineRise 0.85s var(--ease-editorial) forwards;
+}
+
+.headline-line:nth-child(1) .line-inner { animation-delay: 0.45s; }
+.headline-line:nth-child(2) .line-inner { animation-delay: 0.58s; }
+.headline-line:nth-child(3) .line-inner { animation-delay: 0.72s; font-feature-settings: "lnum" 1; }
+
+/* Warm Emotional Supporting Statement */
+.hero-statement {
+  margin-bottom: clamp(22px, 3vh, 36px);
+  opacity: 0;
+  transform: translateY(14px);
+  animation: heroFadeSlide 0.75s var(--ease-editorial) 0.85s forwards;
+}
+
+.statement-main {
+  font-family: var(--font-editorial);
+  font-size: clamp(1.2rem, 1.65vw, 1.55rem);
+  font-weight: 400;
+  font-style: italic;
+  line-height: 1.4;
+  color: var(--text-body);
+  letter-spacing: 0.01em;
+  margin-bottom: 8px;
+}
+
+.statement-sub {
+  font-family: var(--font-sans);
+  font-size: 0.6875rem;
+  font-weight: 600;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  color: var(--text-subtle);
+}
+
+/* Editorial CTA Button */
+.hero-action {
+  display: flex;
+  align-items: center;
+  margin-bottom: clamp(22px, 3vh, 42px);
+  opacity: 0;
+  transform: translateY(14px);
+  animation: heroFadeSlide 0.75s var(--ease-editorial) 1.05s forwards;
+}
+
+.editorial-cta {
+  display: inline-flex;
+  align-items: center;
+  gap: 12px;
+  font-family: var(--font-sans);
+  font-size: 0.8125rem;
+  font-weight: 600;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  color: var(--text-main);
+  position: relative;
+  padding-bottom: 6px;
+  transition: color var(--transition-fast);
+}
+
+.editorial-cta::after {
+  content: "";
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 38px;
+  height: 1.5px;
+  background-color: var(--text-main);
+  transition: width var(--transition-medium), background-color var(--transition-fast);
+}
+
+.cta-arrow {
+  display: inline-block;
+  font-size: 1.05rem;
+  transition: transform var(--transition-fast), color var(--transition-fast);
+}
+
+.editorial-cta:hover {
+  color: var(--brand-accent);
+}
+
+.editorial-cta:hover::after {
+  width: 100%;
+  background-color: var(--brand-accent);
+}
+
+.editorial-cta:hover .cta-arrow {
+  transform: translateX(5px);
+  color: var(--brand-accent);
+}
+
+/* Scroll To Discover Cue */
+.hero-scroll-cue {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  opacity: 0;
+  animation: heroFadeSlide 0.8s var(--ease-editorial) 1.2s forwards;
+}
+
+.scroll-text {
+  font-family: var(--font-sans);
+  font-size: 0.6875rem;
+  font-weight: 600;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  color: var(--text-subtle);
+}
+
+.scroll-arrow {
+  display: inline-block;
+  font-size: 0.8125rem;
+  color: var(--text-muted);
+  animation: gentleBob 2s ease-in-out infinite;
+}
+
+/* ==========================================================================
+   RIGHT SIDE — EXPANSIVE LARGE FRAME (OCCUPIES SPACE ABOVE & BELOW)
+   Significantly increased height (~68vh), fills the right half of the screen
+   ========================================================================== */
+
+.hero-visual-column {
+  width: 100%;
+  max-width: 100%;
+  display: flex;
+  flex-direction: column;
+  position: relative;
+}
+
+.hero-visual-stage {
+  position: relative;
+  width: 100%;
+  max-width: 100%;
+  height: clamp(480px, 68vh, 640px);
+  border-radius: var(--image-radius);
+  overflow: hidden;
+  background-color: var(--bg-warm-shadow);
+  box-shadow: 0 16px 40px -12px rgba(43, 33, 27, 0.08);
+  opacity: 0;
+  animation: heroImageSoftReveal 0.85s var(--ease-editorial) 0.35s forwards;
+}
+
+.hero-slides-wrapper {
+  position: relative;
+  width: 100%;
+  height: 100%;
+}
+
+.hero-slide {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 450ms cubic-bezier(0.25, 1, 0.5, 1);
+  will-change: opacity;
+}
+
+.hero-slide.active {
+  opacity: 1;
+  pointer-events: auto;
+}
+
+/* Full Bleed Image Filling the Entire Large Frame */
+.hero-image {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center center;
+  display: block;
+  border-radius: var(--image-radius);
+}
+
+/* ==========================================================================
+   INTEGRATED PROGRESS INDICATOR (FAST 2-SECOND CYCLE)
+   Clean, minimal, active Meena red progress line
+   ========================================================================== */
+
+.hero-progress-panel {
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  gap: 12px;
+  margin-top: 14px;
+  background: none;
+  border: none;
+  padding: 0;
+  box-shadow: none;
+  user-select: none;
+}
+
+.progress-index {
+  font-family: var(--font-sans);
+  font-size: 0.8125rem;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  color: var(--text-main);
+  min-width: 18px;
+  font-feature-settings: "tnum" 1;
+}
+
+.progress-total {
+  font-family: var(--font-sans);
+  font-size: 0.75rem;
+  font-weight: 500;
+  letter-spacing: 0.08em;
+  color: var(--text-subtle);
+  opacity: 0.6;
+  min-width: 18px;
+  font-feature-settings: "tnum" 1;
+}
+
+.progress-line-track {
+  width: clamp(60px, 7.5vw, 96px);
+  height: 2px;
+  background-color: rgba(43, 33, 27, 0.14);
+  position: relative;
+  overflow: hidden;
+  border-radius: 2px;
+}
+
+.progress-line-fill {
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 100%;
+  width: 0%;
+  background-color: var(--brand-accent);
+  border-radius: 2px;
+  transition: width 60ms linear;
+}
+
+.hero-nav-arrow {
+  background: none;
+  border: none;
+  color: var(--text-muted);
+  padding: 4px;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  opacity: 0.55;
+  transition: opacity var(--transition-fast), color var(--transition-fast);
+}
+
+.hero-nav-arrow:hover {
+  opacity: 1;
+  color: var(--brand-accent);
+}
+
+/* ==========================================================================
+   KEYFRAME ANIMATIONS
+   ========================================================================== */
+
+@keyframes heroFadeSlide {
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes heroLineRise {
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes heroImageSoftReveal {
+  to {
+    opacity: 1;
+  }
+}
+
+@keyframes gentleBob {
+  0%, 100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(4px);
+  }
+}
+
+/* ==========================================================================
+   RESPONSIVE LAYOUTS: TABLET & MOBILE
+   ========================================================================== */
+
+/* Laptop (1024px – 1366px) */
+@media (max-width: 1366px) {
+  .hero-headline {
+    font-size: clamp(2.6rem, 4.4vw, 4.2rem);
+  }
+
+  .hero-visual-stage {
+    height: clamp(440px, 64vh, 560px);
+  }
+}
+
+/* Tablet (769px – 1024px) */
+@media (max-width: 1024px) {
+  .hero-wrapper {
+    grid-template-columns: minmax(0, 46%) minmax(0, 50%);
+    gap: 28px;
+    padding: 0 clamp(20px, 3.5vw, 40px);
+  }
+
+  .hero-headline {
+    font-size: clamp(2.3rem, 4vw, 3.6rem);
+  }
+
+  .statement-main {
+    font-size: 1.2rem;
+  }
+
+  .hero-visual-stage {
+    height: clamp(380px, 50vh, 480px);
+  }
+}
+
+/* Mobile (< 768px): Exact Narrative Order */
+@media (max-width: 768px) {
+  .opening-hero {
+    min-height: auto;
+    padding-top: calc(var(--header-height) + 16px);
+    padding-bottom: 48px;
+    justify-content: flex-start;
+  }
+
+  .hero-wrapper {
+    display: flex;
+    flex-direction: column;
+    padding: 0 20px;
+    gap: 0;
+  }
+
+  .hero-story {
+    max-width: 100%;
+  }
+
+  .hero-eyebrow {
+    font-size: 0.6875rem;
+    margin-bottom: 12px;
+  }
+
+  .hero-headline {
+    font-size: clamp(2.4rem, 10.5vw, 3.4rem);
+    line-height: 1.04;
+    margin-bottom: 0;
+  }
+
+  /* Full Hero Image positioned right after headline */
+  .hero-visual-column {
+    order: 2;
+    margin: 22px 0 14px;
+    width: 100%;
+  }
+
+  .hero-visual-stage {
+    height: clamp(280px, 48vh, 380px);
+    width: 100%;
+  }
+
+  .hero-progress-panel {
+    margin-top: 10px;
+  }
+
+  .hero-statement {
+    order: 3;
+    margin-top: 14px;
+    margin-bottom: 22px;
+  }
+
+  .statement-main {
+    font-size: 1.25rem;
+    line-height: 1.38;
+  }
+
+  .hero-action {
+    order: 4;
+    margin-bottom: 28px;
+  }
+
+  .hero-scroll-cue {
+    order: 5;
+  }
+
+  .hero-watermark {
+    display: none;
+  }
+}

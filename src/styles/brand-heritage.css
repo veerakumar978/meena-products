@@ -1,0 +1,409 @@
+/* ==========================================================================
+   MEENA FOODS — SECTION 01: BRAND HERITAGE
+   "A Taste That Began in 1942"
+   Editorial Heritage Composition, Asymmetric Layout & Continuity Timeline
+   ========================================================================== */
+
+.section-brand-heritage {
+  position: relative;
+  width: 100%;
+  min-height: 110vh;
+  background-color: var(--bg-primary);
+  background: radial-gradient(
+    ellipse 80% 70% at 25% 40%,
+    #FAF7F0 0%,
+    #F6F1E7 60%,
+    #F1EADB 100%
+  );
+  padding: clamp(80px, 12vh, 140px) 0;
+  overflow: hidden;
+  box-sizing: border-box;
+  border-top: 1px solid rgba(43, 33, 27, 0.06);
+}
+
+/* Master Section Wrapper */
+.brand-container {
+  width: 100%;
+  max-width: var(--content-max-width);
+  margin: 0 auto;
+  padding: 0 clamp(24px, 4.5vw, 64px);
+  position: relative;
+  z-index: 10;
+  box-sizing: border-box;
+}
+
+/* ==========================================================================
+   SECTION 01: TOP EDITORIAL LABEL
+   ========================================================================== */
+
+.brand-section-header {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  margin-bottom: clamp(48px, 7vh, 80px);
+}
+
+.brand-label-number {
+  font-family: var(--font-sans);
+  font-size: 0.75rem;
+  font-weight: 600;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  color: var(--text-muted);
+}
+
+.brand-label-rule {
+  width: 44px;
+  height: 1px;
+  background-color: var(--border-medium);
+}
+
+.brand-label-since {
+  font-family: var(--font-sans);
+  font-size: 0.75rem;
+  font-weight: 700;
+  letter-spacing: 0.22em;
+  text-transform: uppercase;
+  color: var(--brand-accent);
+}
+
+/* ==========================================================================
+   MAIN ASYMMETRIC GRID COMPOSITION (Left: Story ~46%, Right: Visual ~46%)
+   ========================================================================== */
+
+.brand-editorial-grid {
+  display: grid;
+  grid-template-columns: minmax(0, 47%) 40px minmax(0, 47%);
+  align-items: center;
+  gap: clamp(24px, 3.5vw, 48px);
+  position: relative;
+}
+
+/* ==========================================================================
+   LEFT COLUMN — STORY & HERITAGE TYPOGRAPHY
+   ========================================================================== */
+
+.brand-story-column {
+  position: relative;
+  z-index: 5;
+  max-width: 580px;
+}
+
+/* Giant 1942 Background Watermark (Opacity 0.05 — deeply embedded) */
+.brand-watermark-1942 {
+  position: absolute;
+  top: -40px;
+  left: -20px;
+  font-family: var(--font-editorial);
+  font-size: clamp(8rem, 16vw, 15rem);
+  font-weight: 400;
+  font-style: italic;
+  line-height: 0.8;
+  color: var(--text-main);
+  opacity: 0.055;
+  pointer-events: none;
+  user-select: none;
+  z-index: -1;
+  white-space: nowrap;
+  transition: transform 0.3s ease-out;
+}
+
+/* Main Heritage Headline */
+.brand-headline {
+  font-family: var(--font-editorial);
+  font-size: clamp(2.6rem, 4.4vw, 4.4rem);
+  font-weight: 500;
+  line-height: 1.05;
+  letter-spacing: -0.015em;
+  color: var(--text-main);
+  margin-bottom: clamp(28px, 4vh, 42px);
+}
+
+.brand-headline-line {
+  display: block;
+  overflow: hidden;
+}
+
+.brand-headline-inner {
+  display: block;
+  opacity: 0;
+  transform: translateY(40px);
+  transition: opacity 0.8s var(--ease-editorial), transform 0.8s var(--ease-editorial);
+}
+
+.brand-editorial-grid.in-view .brand-headline-line:nth-child(1) .brand-headline-inner {
+  opacity: 1;
+  transform: translateY(0);
+  transition-delay: 0.15s;
+}
+
+.brand-editorial-grid.in-view .brand-headline-line:nth-child(2) .brand-headline-inner {
+  opacity: 1;
+  transform: translateY(0);
+  transition-delay: 0.28s;
+}
+
+.brand-editorial-grid.in-view .brand-headline-line:nth-child(3) .brand-headline-inner {
+  opacity: 1;
+  transform: translateY(0);
+  transition-delay: 0.42s;
+  font-feature-settings: "lnum" 1;
+}
+
+/* Verified Brand Narrative */
+.brand-story-body {
+  margin-bottom: clamp(28px, 4vh, 44px);
+}
+
+.brand-story-lead {
+  font-family: var(--font-editorial);
+  font-size: clamp(1.25rem, 1.7vw, 1.55rem);
+  font-weight: 500;
+  line-height: 1.45;
+  color: var(--text-main);
+  margin-bottom: 16px;
+  letter-spacing: -0.005em;
+  opacity: 0;
+  transform: translateY(20px);
+  transition: opacity 0.8s var(--ease-editorial) 0.5s, transform 0.8s var(--ease-editorial) 0.5s;
+}
+
+.brand-story-text {
+  font-family: var(--font-sans);
+  font-size: 0.9375rem;
+  font-weight: 400;
+  line-height: 1.75;
+  color: var(--text-body);
+  opacity: 0;
+  transform: translateY(20px);
+  transition: opacity 0.8s var(--ease-editorial) 0.65s, transform 0.8s var(--ease-editorial) 0.65s;
+}
+
+.brand-editorial-grid.in-view .brand-story-lead,
+.brand-editorial-grid.in-view .brand-story-text {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* Brand Statement Blockquote */
+.brand-statement-quote {
+  border-left: 2px solid var(--brand-accent);
+  padding-left: clamp(16px, 2vw, 24px);
+  margin: 0;
+  opacity: 0;
+  transform: translateY(20px);
+  transition: opacity 0.8s var(--ease-editorial) 0.8s, transform 0.8s var(--ease-editorial) 0.8s;
+}
+
+.brand-editorial-grid.in-view .brand-statement-quote {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.statement-quote-text {
+  font-family: var(--font-editorial);
+  font-size: clamp(1.2rem, 1.6vw, 1.45rem);
+  font-weight: 400;
+  font-style: italic;
+  line-height: 1.4;
+  color: var(--text-main);
+}
+
+/* ==========================================================================
+   CENTER CONTINUITY TIMELINE LINE (1942 ──→ TODAY)
+   ========================================================================== */
+
+.brand-timeline-track {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  height: 380px;
+  position: relative;
+}
+
+.timeline-year-top {
+  font-family: var(--font-editorial);
+  font-size: 0.875rem;
+  font-weight: 600;
+  letter-spacing: 0.1em;
+  color: var(--text-muted);
+  font-feature-settings: "lnum" 1;
+  margin-bottom: 12px;
+}
+
+.timeline-line-rail {
+  width: 1px;
+  flex: 1;
+  background-color: var(--border-medium);
+  position: relative;
+}
+
+.timeline-marker-dot {
+  position: absolute;
+  top: 0%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 7px;
+  height: 7px;
+  border-radius: 50%;
+  background-color: var(--brand-accent);
+  box-shadow: 0 0 0 3px var(--bg-primary);
+  transition: top 0.15s ease-out;
+}
+
+.timeline-year-bottom {
+  font-family: var(--font-sans);
+  font-size: 0.6875rem;
+  font-weight: 700;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  color: var(--text-muted);
+  margin-top: 12px;
+}
+
+/* ==========================================================================
+   RIGHT COLUMN — REAL ABOUT.WEBP IMAGE VISUAL
+   100% Uncropped, Natural Aspect Ratio, Museum Editorial Treatment
+   ========================================================================== */
+
+.brand-visual-column {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+}
+
+.brand-image-stage {
+  position: relative;
+  width: 100%;
+  max-width: 540px;
+  margin: 0 auto;
+  aspect-ratio: 1 / 1;
+  border-radius: 4px;
+  overflow: hidden;
+  background-color: var(--bg-surface);
+  box-shadow: 0 16px 44px -14px rgba(43, 33, 27, 0.10);
+  opacity: 0;
+  transform: scale(0.97) translateY(20px);
+  transition: opacity 1s var(--ease-editorial) 0.4s, transform 1s var(--ease-editorial) 0.4s;
+}
+
+.brand-editorial-grid.in-view .brand-image-stage {
+  opacity: 1;
+  transform: scale(1) translateY(0);
+}
+
+.brand-image-element {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center center;
+  display: block;
+  border-radius: 4px;
+  transition: transform 1.2s var(--ease-cinematic);
+}
+
+.brand-image-stage:hover .brand-image-element {
+  transform: scale(1.02);
+}
+
+/* Museum Editorial Image Caption */
+.brand-image-caption {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  margin-top: 16px;
+  max-width: 540px;
+  margin-left: auto;
+  margin-right: auto;
+  font-family: var(--font-sans);
+  font-size: 0.6875rem;
+  font-weight: 600;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  color: var(--text-subtle);
+  opacity: 0;
+  transition: opacity 0.8s var(--ease-editorial) 0.9s;
+}
+
+.brand-editorial-grid.in-view .brand-image-caption {
+  opacity: 1;
+}
+
+.caption-dot {
+  color: var(--brand-accent);
+}
+
+/* ==========================================================================
+   RESPONSIVE LAYOUTS: TABLET & MOBILE
+   ========================================================================== */
+
+@media (max-width: 1024px) {
+  .brand-editorial-grid {
+    grid-template-columns: minmax(0, 48%) 24px minmax(0, 48%);
+    gap: 24px;
+  }
+
+  .brand-headline {
+    font-size: clamp(2.2rem, 3.8vw, 3.4rem);
+  }
+
+  .brand-timeline-track {
+    height: 320px;
+  }
+}
+
+/* Mobile (< 768px): Vertical Narrative Order */
+@media (max-width: 768px) {
+  .section-brand-heritage {
+    min-height: auto;
+    padding: 64px 0 72px;
+  }
+
+  .brand-section-header {
+    margin-bottom: 32px;
+  }
+
+  .brand-editorial-grid {
+    display: flex;
+    flex-direction: column;
+    gap: 0;
+  }
+
+  .brand-timeline-track {
+    display: none;
+  }
+
+  .brand-story-column {
+    max-width: 100%;
+    margin-bottom: 32px;
+  }
+
+  .brand-watermark-1942 {
+    font-size: 6.5rem;
+    top: -24px;
+    left: -10px;
+  }
+
+  .brand-headline {
+    font-size: clamp(2.2rem, 9vw, 3rem);
+    margin-bottom: 24px;
+  }
+
+  /* Image follows story smoothly on mobile */
+  .brand-visual-column {
+    order: 2;
+    margin-bottom: 28px;
+  }
+
+  .brand-image-stage {
+    max-width: 100%;
+    aspect-ratio: 1 / 1;
+  }
+
+  .brand-statement-quote {
+    order: 3;
+    margin-top: 12px;
+  }
+}

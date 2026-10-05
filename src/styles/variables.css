@@ -1,0 +1,55 @@
+/* ==========================================================================
+   MEENA FOODS — DESIGN SYSTEM VARIABLES
+   Section 00: "The First Impression of 1942"
+   Warm Heritage Bakery Atmosphere
+   ========================================================================== */
+
+:root {
+  /* Warm Bakery Background Palette */
+  --bg-primary: #F6F1E7;            /* Soft warm bakery cream */
+  --bg-warm-light: #FAF6EE;         /* Lighter warm highlight */
+  --bg-warm-shadow: #F0E8DA;        /* Gentle ambient warmth */
+  --bg-surface: #FCFAF5;
+  --bg-translucent: rgba(246, 241, 231, 0.94);
+
+  /* Warm Bakery Ambient Radial Atmosphere */
+  --bg-atmosphere: radial-gradient(
+    ellipse 85% 75% at 72% 32%,
+    #FAF7F0 0%,
+    #F6F1E7 55%,
+    #F1E9DB 100%
+  );
+
+  /* Deep Espresso & Roasted Typography */
+  --text-main: #2B211B;             /* Deep espresso */
+  --text-body: #483D36;             /* Warm roasted brown */
+  --text-muted: #786C64;            /* Refined secondary */
+  --text-subtle: #A3968E;           /* Quiet label tone */
+
+  /* Authentic Meena Brand Accent */
+  --brand-accent: #EB1822;          /* Signature Meena Crimson Red */
+  --brand-accent-soft: rgba(235, 24, 34, 0.12);
+  --brand-accent-line: rgba(235, 24, 34, 0.85);
+
+  /* Architectural & Separator Lines */
+  --border-subtle: rgba(43, 33, 27, 0.09);
+  --border-medium: rgba(43, 33, 27, 0.16);
+
+  /* Typography Families */
+  --font-editorial: 'Cormorant Garamond', Georgia, serif;
+  --font-sans: 'Plus Jakarta Sans', -apple-system, BlinkMacSystemFont, 'Inter', sans-serif;
+
+  /* Dimensions */
+  --header-height: 88px;
+  --content-max-width: 1720px;
+
+  /* Easing & Transition Curves */
+  --ease-editorial: cubic-bezier(0.16, 1, 0.3, 1);
+  --ease-cinematic: cubic-bezier(0.25, 1, 0.5, 1);
+  --transition-fast: 220ms var(--ease-editorial);
+  --transition-medium: 440ms var(--ease-editorial);
+  --transition-slow: 950ms var(--ease-cinematic);
+
+  /* Image corner finish */
+  --image-radius: 3px;
+}

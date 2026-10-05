@@ -1,0 +1,590 @@
+/* ==========================================================================
+   MEENA FOODS — SECTION 04: THE MAKING STYLES
+   Realistic 3D Food Production Film — 6 Stations, 2s Cycle, Red Progress Line
+   ========================================================================== */
+
+.section-making {
+  position: relative;
+  width: 100%;
+  background-color: #F4EFE6;
+  background: radial-gradient(
+    ellipse 90% 70% at 50% 20%,
+    #F8F3EA 0%,
+    #F4EFE6 55%,
+    #ECE4D6 100%
+  );
+  padding: clamp(64px, 9vh, 100px) 0 clamp(48px, 7vh, 80px);
+  border-top: 1px solid rgba(43, 33, 27, 0.08);
+  box-sizing: border-box;
+  overflow-x: hidden;
+}
+
+.making-inner-container {
+  width: 100%;
+  max-width: var(--content-max-width);
+  margin: 0 auto;
+  padding: 0 clamp(24px, 4.5vw, 64px);
+  box-sizing: border-box;
+}
+
+/* ==========================================================================
+   SECTION HEADER: SHORT & RESTRAINED
+   ========================================================================== */
+
+.making-intro-header {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  margin-bottom: clamp(36px, 5vh, 52px);
+}
+
+.making-eyebrow-line {
+  display: inline-flex;
+  align-items: center;
+  gap: 12px;
+  margin-bottom: 12px;
+}
+
+.making-accent-dash {
+  display: inline-block;
+  width: 28px;
+  height: 1px;
+  background-color: var(--brand-accent);
+}
+
+.making-eyebrow-title {
+  font-family: var(--font-sans);
+  font-size: 0.75rem;
+  font-weight: 700;
+  letter-spacing: 0.22em;
+  text-transform: uppercase;
+  color: var(--brand-accent);
+}
+
+.making-headline-main {
+  font-family: var(--font-editorial);
+  font-size: clamp(2.6rem, 4.5vw, 4.4rem);
+  font-weight: 500;
+  line-height: 1.05;
+  letter-spacing: -0.015em;
+  color: var(--text-main);
+  margin-bottom: 10px;
+}
+
+.making-headline-sub {
+  font-family: var(--font-editorial);
+  font-size: clamp(1.15rem, 1.4vw, 1.35rem);
+  font-weight: 400;
+  font-style: italic;
+  color: var(--text-body);
+  max-width: 540px;
+}
+
+/* ==========================================================================
+   MAIN PRODUCTION EXPERIENCE CONTAINER
+   ========================================================================== */
+
+.making-station-experience {
+  position: relative;
+  width: 100%;
+  background: #FCFAF6;
+  border: 1px solid rgba(43, 33, 27, 0.08);
+  border-radius: var(--image-radius);
+  box-shadow: 0 20px 56px -16px rgba(43, 33, 27, 0.09);
+  padding: clamp(32px, 4.5vw, 56px);
+  box-sizing: border-box;
+}
+
+/* ==========================================================================
+   DISPLAY CANVAS (LEFT TEXT + RIGHT/CENTER LARGE 3D VISUAL)
+   ========================================================================== */
+
+.station-film-stage {
+  position: relative;
+  width: 100%;
+  min-height: 440px;
+  transition: opacity 300ms cubic-bezier(0.16, 1, 0.3, 1), transform 300ms cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.station-content-grid {
+  display: grid;
+  grid-template-columns: minmax(0, 40%) minmax(0, 56%);
+  justify-content: space-between;
+  align-items: center;
+  gap: clamp(28px, 4vw, 56px);
+}
+
+/* Stage 05 (Bake): Hero Visual takes 65-70% visual area */
+.station-content-grid.is-hero-bake-stage {
+  grid-template-columns: minmax(0, 32%) minmax(0, 65%);
+}
+
+/* LEFT COLUMN: Editorial Station Story */
+.station-left-column {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+}
+
+.station-badge-row {
+  display: inline-flex;
+  align-items: baseline;
+  gap: 5px;
+  font-family: var(--font-sans);
+  font-size: 0.75rem;
+  font-weight: 700;
+  letter-spacing: 0.12em;
+  color: var(--brand-accent);
+  margin-bottom: 12px;
+}
+
+.station-step-num {
+  font-size: 1.15rem;
+  line-height: 1;
+}
+
+.station-step-sep {
+  opacity: 0.45;
+}
+
+.station-step-total {
+  color: var(--text-subtle);
+}
+
+.station-step-tag {
+  margin-left: 6px;
+  font-size: 0.625rem;
+  letter-spacing: 0.2em;
+  color: var(--text-muted);
+}
+
+.station-stage-title {
+  font-family: var(--font-editorial);
+  font-size: clamp(2.2rem, 3.4vw, 3.2rem);
+  font-weight: 500;
+  line-height: 1.05;
+  color: var(--text-main);
+  margin-bottom: 8px;
+}
+
+.station-stage-headline {
+  font-family: var(--font-editorial);
+  font-size: clamp(1.15rem, 1.4vw, 1.35rem);
+  font-weight: 400;
+  font-style: italic;
+  color: var(--text-body);
+  margin-bottom: 18px;
+}
+
+.station-stage-desc {
+  font-family: var(--font-sans);
+  font-size: 0.9375rem;
+  line-height: 1.65;
+  color: var(--text-body);
+  margin-bottom: 24px;
+  max-width: 440px;
+}
+
+.station-time-cue {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  font-family: var(--font-sans);
+  font-size: 0.625rem;
+  font-weight: 700;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  color: var(--text-subtle);
+  padding: 6px 12px;
+  background: rgba(43, 33, 27, 0.04);
+  border-radius: 20px;
+}
+
+.time-cue-pulse {
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  background-color: var(--brand-accent);
+  animation: pulseDot 2s infinite ease-in-out;
+}
+
+/* RIGHT COLUMN: Large Realistic 3D Food Visual */
+.station-visual-column {
+  position: relative;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+}
+
+.station-visual-frame {
+  position: relative;
+  width: 100%;
+  height: clamp(340px, 44vh, 480px);
+  border-radius: var(--image-radius);
+  overflow: hidden;
+  background-color: #EFE7DA;
+  border: 1px solid rgba(43, 33, 27, 0.08);
+  box-shadow: 0 18px 48px -12px rgba(43, 33, 27, 0.12);
+}
+
+.hero-bake-frame {
+  height: clamp(380px, 50vh, 540px);
+  box-shadow: 0 24px 64px -14px rgba(43, 33, 27, 0.18);
+}
+
+.station-3d-img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center center;
+  display: block;
+}
+
+/* 3D Visual Micro-Animations */
+.film-breathe-anim {
+  animation: filmBreathe 10s ease-in-out infinite alternate;
+}
+
+.hero-push-in-anim {
+  animation: heroCameraPushIn 12s cubic-bezier(0.25, 1, 0.5, 1) infinite alternate;
+}
+
+@keyframes filmBreathe {
+  0% {
+    transform: scale(1);
+  }
+  100% {
+    transform: scale(1.03);
+  }
+}
+
+@keyframes heroCameraPushIn {
+  0% {
+    transform: scale(1);
+  }
+  100% {
+    transform: scale(1.055);
+  }
+}
+
+@keyframes pulseDot {
+  0%, 100% {
+    transform: scale(0.9);
+    opacity: 0.6;
+  }
+  50% {
+    transform: scale(1.3);
+    opacity: 1;
+  }
+}
+
+/* Stage 05 (Bake): Artisanal Crust Detail Callout */
+.hero-crust-callout {
+  position: absolute;
+  bottom: 16px;
+  right: 18px;
+  background: rgba(22, 16, 12, 0.78);
+  backdrop-filter: blur(8px);
+  padding: 8px 14px;
+  border-radius: 2px;
+  border: 1px solid rgba(255, 255, 255, 0.14);
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.callout-pip {
+  color: var(--brand-accent);
+  font-size: 0.625rem;
+}
+
+.callout-txt {
+  font-family: var(--font-sans);
+  font-size: 0.6875rem;
+  font-weight: 700;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  color: #FAF6EE;
+}
+
+/* Stage 06 (Pack): Real Product Inset Anchor */
+.pack-real-anchor {
+  position: absolute;
+  bottom: 16px;
+  right: 18px;
+  background: rgba(255, 255, 255, 0.92);
+  backdrop-filter: blur(8px);
+  padding: 10px 14px;
+  border-radius: var(--image-radius);
+  border: 1px solid rgba(43, 33, 27, 0.1);
+  box-shadow: 0 12px 30px -8px rgba(43, 33, 27, 0.15);
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.pack-anchor-img {
+  width: 58px;
+  height: auto;
+  object-fit: contain;
+}
+
+.pack-anchor-lbl {
+  font-family: var(--font-sans);
+  font-size: 0.625rem;
+  font-weight: 700;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  color: var(--text-main);
+}
+
+/* ==========================================================================
+   BOTTOM HORIZONTAL JOURNEY LINE & STATION NODES
+   ●────────●────────●────────●────────●────────●
+   ========================================================================== */
+
+.station-timeline-nav {
+  position: relative;
+  width: 100%;
+  margin-top: clamp(40px, 6vh, 60px);
+  padding-top: 24px;
+}
+
+.station-line-track {
+  position: absolute;
+  top: 31px;
+  left: 28px;
+  right: 28px;
+  height: 2px;
+  background-color: rgba(43, 33, 27, 0.14); /* Muted warm brown base line */
+  z-index: 1;
+}
+
+.station-line-fill {
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 100%;
+  background-color: var(--brand-accent); /* MEENA RED continuous active progress */
+  transition: width 120ms linear;
+}
+
+.station-nodes-row {
+  position: relative;
+  z-index: 2;
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
+}
+
+.station-node-btn {
+  background: none;
+  border: none;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 6px;
+  cursor: pointer;
+  padding: 0 4px;
+  outline: none;
+  transition: transform var(--transition-fast);
+}
+
+.station-marker-circle {
+  width: 16px;
+  height: 16px;
+  border-radius: 50%;
+  background-color: #FAF5EE; /* Inactive soft beige */
+  border: 2px solid rgba(43, 33, 27, 0.28);
+  box-shadow: 0 0 0 4px #FCFAF6;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: background-color var(--transition-fast), border-color var(--transition-fast), transform var(--transition-fast);
+}
+
+.marker-core {
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  background-color: transparent;
+  transition: background-color var(--transition-fast);
+}
+
+.station-num {
+  font-family: var(--font-sans);
+  font-size: 0.6875rem;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  color: var(--text-subtle);
+  transition: color var(--transition-fast);
+}
+
+.station-name {
+  font-family: var(--font-sans);
+  font-size: 0.75rem;
+  font-weight: 700;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+  color: var(--text-muted);
+  transition: color var(--transition-fast);
+}
+
+/* Station States */
+.station-node-btn:hover .station-marker-circle {
+  border-color: var(--brand-accent);
+  transform: scale(1.15);
+}
+
+.station-node-btn:hover .station-name {
+  color: var(--text-main);
+}
+
+/* Current Station (Meena Red Active) */
+.station-node-btn.current .station-marker-circle {
+  background-color: var(--brand-accent);
+  border-color: var(--brand-accent);
+  transform: scale(1.28);
+  box-shadow: 0 0 0 5px rgba(235, 24, 34, 0.2);
+}
+
+.station-node-btn.current .marker-core {
+  background-color: #FFFFFF;
+}
+
+.station-node-btn.current .station-num {
+  color: var(--brand-accent);
+}
+
+.station-node-btn.current .station-name {
+  color: #261B14;
+}
+
+/* Completed Station */
+.station-node-btn.completed .station-marker-circle {
+  background-color: var(--text-main);
+  border-color: var(--text-main);
+}
+
+.station-node-btn.completed .marker-core {
+  background-color: #FFFFFF;
+}
+
+/* Keyboard Accessibility */
+.station-node-btn:focus-visible {
+  outline: 2px solid var(--brand-accent);
+  outline-offset: 4px;
+}
+
+/* ==========================================================================
+   SECTION 04 END PROCLAMATION
+   ========================================================================== */
+
+.making-closing-statement {
+  margin-top: clamp(48px, 7vh, 72px);
+  padding-top: clamp(28px, 4vh, 40px);
+  border-top: 1px solid rgba(43, 33, 27, 0.08);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  gap: 8px;
+}
+
+.closing-quote-headline {
+  font-family: var(--font-editorial);
+  font-size: clamp(1.4rem, 2.2vw, 2rem);
+  font-weight: 500;
+  line-height: 1.2;
+  letter-spacing: -0.01em;
+  color: var(--text-main);
+}
+
+.closing-brand-emblem {
+  font-family: var(--font-sans);
+  font-size: 0.6875rem;
+  font-weight: 700;
+  letter-spacing: 0.24em;
+  text-transform: uppercase;
+  color: var(--text-subtle);
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.emblem-dot {
+  color: var(--brand-accent);
+}
+
+/* ==========================================================================
+   RESPONSIVE (TABLET & MOBILE)
+   ========================================================================== */
+
+@media (max-width: 1024px) {
+  .station-content-grid,
+  .station-content-grid.is-hero-bake-stage {
+    grid-template-columns: 1fr;
+    gap: 28px;
+  }
+
+  .station-visual-frame,
+  .hero-bake-frame {
+    height: 320px;
+  }
+
+  .station-line-track {
+    left: 20px;
+    right: 20px;
+  }
+}
+
+@media (max-width: 640px) {
+  .making-station-experience {
+    padding: 24px 18px;
+  }
+
+  .station-visual-frame,
+  .hero-bake-frame {
+    height: 240px;
+  }
+
+  .making-headline-main {
+    font-size: clamp(2.2rem, 10vw, 3rem);
+  }
+
+  .station-stage-title {
+    font-size: 2rem;
+  }
+
+  .station-node-btn {
+    padding: 0 2px;
+  }
+
+  .station-name {
+    font-size: 0.625rem;
+    letter-spacing: 0.08em;
+  }
+
+  .station-num {
+    font-size: 0.5625rem;
+  }
+
+  .hero-crust-callout {
+    bottom: 8px;
+    right: 8px;
+    padding: 6px 10px;
+  }
+
+  .callout-txt {
+    font-size: 0.5625rem;
+  }
+}
+
+/* Reduced Motion */
+@media (prefers-reduced-motion: reduce) {
+  .film-breathe-anim,
+  .hero-push-in-anim {
+    animation: none !important;
+  }
+}
